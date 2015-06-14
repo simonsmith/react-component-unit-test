@@ -11,7 +11,7 @@ describe('PostList component', function() {
   ];
 
   it('should render a list of post components', function() {
-    const postList = createComponent(PostList, { posts: postData }).getRenderOutput();
+    const postList = createComponent(PostList, { posts: postData });
     const items = postList.props.children.filter(postListItem => postListItem.props.children.type.displayName === 'Post');
 
     expect(items.length).to.equal(postData.length);

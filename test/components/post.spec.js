@@ -7,7 +7,7 @@ describe('Post component', function() {
   let post;
 
   beforeEach(function() {
-    post = createComponent(Post, { title: 'Title', content: '<p>Content</p>'}).getRenderOutput();
+    post = createComponent(Post, { title: 'Title', content: '<p>Content</p>'});
   });
 
   it('should render a post title and content', function() {

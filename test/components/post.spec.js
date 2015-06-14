@@ -3,7 +3,6 @@ import { expect } from 'chai';
 import Post from '../../components/post.react';
 import createComponent from '../util/create-component';
 
-
 describe('Post component', function() {
   let post;
 
@@ -25,5 +24,5 @@ describe('Post component', function() {
 
       expect(strippedText).to.equal('Some text. More text.');
     });
-  })
+  });
 });

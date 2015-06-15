@@ -1,7 +1,10 @@
 import { expect } from 'chai';
-
+import React from 'react/addons';
 import PostList from '../../components/post-list.react';
+import Post from '../../components/post.react';
 import createComponent from '../util/create-component';
+
+const TestUtils = React.addons.TestUtils;
 
 describe('PostList component', function() {
   const postData = [
@@ -12,7 +15,7 @@ describe('PostList component', function() {
 
   it('should render a list of post components', function() {
     const postList = createComponent(PostList, { posts: postData });
-    const items = postList.props.children.filter(postListItem => postListItem.props.children.type.displayName === 'Post');
+    const items = postList.props.children.filter(postListItem => TestUtils.isElementOfType(postListItem.props.children, Post));
 
     expect(items.length).to.equal(postData.length);
   });

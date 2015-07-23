@@ -17,9 +17,11 @@ export default React.createClass({
   render() {
     const content = this.stripParagraphTags(this.props.content);
 
-    return  div({ className: 'Post'},
+    return (
+            div({ className: 'Post'},
               h2({ className: 'Post-header' }, this.props.title),
               p({ className: 'Post-content'}, content)
-            );
+            )
+          );
   }
 });

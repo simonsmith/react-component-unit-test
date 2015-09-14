@@ -14,12 +14,17 @@ export default React.createClass({
     return html.replace(/<\/?p>/g, '');
   },
 
+  doSomethingOnClick(event) {
+    // Do something
+    event.preventDefault();
+  },
+
   render() {
     const content = this.stripParagraphTags(this.props.content);
 
     return (
             div({ className: 'Post'},
-              h2({ className: 'Post-header' }, this.props.title),
+              h2({ className: 'Post-header', onClick: this.doSomethingOnClick}, this.props.title),
               p({ className: 'Post-content'}, content)
             )
           );

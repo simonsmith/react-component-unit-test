@@ -23,10 +23,10 @@ export default React.createClass({
     const content = this.stripParagraphTags(this.props.content);
 
     return (
-            div({ className: 'Post'},
-              h2({ className: 'Post-header', onClick: this.doSomethingOnClick}, this.props.title),
-              p({ className: 'Post-content'}, content)
-            )
-          );
+      div({ className: 'Post'},
+        h2({ className: 'Post-header', onClick: this.doSomethingOnClick}, this.props.title),
+        p({ className: 'Post-content'}, content)
+      )
+    );
   }
 });

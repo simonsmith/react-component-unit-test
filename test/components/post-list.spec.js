@@ -1,10 +1,9 @@
 import { expect } from 'chai';
-import React from 'react/addons';
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 import PostList from '../../components/post-list.react';
 import Post from '../../components/post.react';
 import sd from 'skin-deep';
-
-const TestUtils = React.addons.TestUtils;
 
 describe('PostList component', function() {
   const postData = [

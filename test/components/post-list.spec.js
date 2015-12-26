@@ -12,7 +12,7 @@ describe('PostList component', function() {
     { id: 3, title: 'Title 3', content: '<p>Content 3</p>' }
   ];
 
-  it('should render a list of post components', function() {
+  it('should render a list of post components', () => {
     const tree = sd.shallowRender(React.createElement(PostList, {posts: postData}));
     const vdom = tree.getRenderOutput();
     const items = vdom.props.children.filter(postListItem => TestUtils.isElementOfType(postListItem.props.children, Post));

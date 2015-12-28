@@ -1,6 +1,6 @@
 import React from 'react';
 
-const { div, h2, p } = React.DOM;
+const {div, h2, p} = React.DOM;
 
 export default React.createClass({
   displayName: 'Post',
@@ -23,9 +23,9 @@ export default React.createClass({
     const content = this.stripParagraphTags(this.props.content);
 
     return (
-      div({ className: 'Post'},
-        h2({ className: 'Post-header', onClick: this.doSomethingOnClick}, this.props.title),
-        p({ className: 'Post-content'}, content)
+      div({className: 'Post'},
+        h2({className: 'Post-header', onClick: this.doSomethingOnClick}, this.props.title),
+        p({className: 'Post-content'}, content)
       )
     );
   }

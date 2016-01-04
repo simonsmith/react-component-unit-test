@@ -15,7 +15,7 @@ export default React.createClass({
   },
 
   doSomethingOnClick(event) {
-    // Do something
+    this.setState({isClicked: true});
     event.preventDefault();
   },
 

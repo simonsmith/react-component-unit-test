@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import {expect} from 'chai';
 import React from 'react';
 import Post from '../../components/post.react';
 import sd from 'skin-deep';
@@ -13,6 +13,18 @@ describe('Post component', () => {
   it('should render a post title and content', () => {
     expect(tree.subTree('.Post-header').text()).to.equal('Title');
     expect(tree.subTree('.Post-content').text()).to.equal('Content');
+  });
+
+  describe('doSomethingOnClick method', () => {
+    it('should modify the `isClicked` state property', () => {
+      const header = tree.subTree('.Post-header');
+
+      header.props.onClick({
+        preventDefault() {}
+      });
+
+      expect(tree.getMountedInstance().state).to.eql({isClicked: true});
+    });
   });
 
   describe('stripParagraphTags method', () => {
